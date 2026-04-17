@@ -15,7 +15,7 @@ const FloatingButtons = () => {
     <>
       {/* WhatsApp */}
       <a
-        href="https://wa.me/919113845518"
+        href="https://wa.me/919113845518?text=Hello%20Sindhu!%20I%20am%20interested%20in%20your%20makeup%20services%20and%20would%20like%20to%20know%20more%20details."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
@@ -32,7 +32,7 @@ const FloatingButtons = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0 }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="fixed bottom-6 left-6 z-40 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+            className="fixed bottom-24 right-7 z-40 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
             aria-label="Back to top"
           >
             <ArrowUp className="w-5 h-5" />

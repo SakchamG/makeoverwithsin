@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import HoverButton from "./ui/HoverButton";
 
 const packages = [
   {
@@ -45,19 +46,19 @@ const PackagesSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.15 }}
-              className={`relative card-luxury text-center ${
-                pkg.popular ? "rose-gold-border scale-105" : ""
+              className={`relative card-luxury text-center transition-all duration-500 ${
+                pkg.popular ? "rose-gold-border scale-105 lg:scale-110 z-10 bg-card/95" : "border-border/50 opacity-90 hover:opacity-100"
               }`}
-              style={pkg.popular ? { boxShadow: "var(--shadow-glow)" } : {}}
+              style={pkg.popular ? { boxShadow: "0 0 30px -10px hsl(var(--primary))" } : {}}
             >
               {pkg.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-primary-foreground text-xs font-body font-semibold">
-                  Most Popular
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-heading font-bold shadow-lg whitespace-nowrap">
+                  🌟 Recommended
                 </span>
               )}
 
-              <h3 className="font-heading text-xl font-bold text-foreground mt-2">{pkg.name}</h3>
-              <div className="my-4">
+              <h3 className="font-heading text-xl font-bold text-foreground mt-4">{pkg.name}</h3>
+              <div className="my-5">
                 <span className="font-heading text-3xl font-bold text-gradient-rose">{pkg.price}</span>
               </div>
 
@@ -69,15 +70,25 @@ const PackagesSection = () => {
                 ))}
               </ul>
 
-              <a
+              <HoverButton
+                as="a"
                 href="#contact"
-                className={pkg.popular ? "btn-primary-luxury w-full" : "btn-outline-luxury w-full"}
+                className="w-full"
               >
                 Choose Package
-              </a>
+              </HoverButton>
             </motion.div>
           ))}
         </div>
+        
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-center mt-12 font-body text-sm text-primary font-medium tracking-wide"
+        >
+          * Advance booking required for all packages
+        </motion.p>
       </div>
     </section>
   );

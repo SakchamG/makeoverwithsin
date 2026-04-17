@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import heroImg from "@/assets/hero-makeup.jpg";
+// import heroImg from "@/assets/hero-makeup.jpg";
+import showcaseImg from "@/assets/showcase.png";
+import HoverButton from "./ui/HoverButton";
 
 const HeroSection = () => {
   return (
@@ -40,13 +42,29 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 pt-2">
-            <a href="#contact" className="btn-primary-luxury">
+            <HoverButton as="a" href="#contact">
               Book Appointment
-            </a>
-            <a href="#gallery" className="btn-outline-luxury">
-              View Portfolio
-            </a>
+            </HoverButton>
+            <HoverButton
+              as="a"
+              href="https://wa.me/919113845518?text=Hello%20Sindhu!%20I%20am%20interested%20in%20your%20makeup%20services%20and%20would%20like%20to%20know%20more%20details."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#25D366]/10 border-[#25D366] text-[#25D366]"
+            >
+              Book on WhatsApp
+            </HoverButton>
           </div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="text-sm font-body text-muted-foreground pt-2 flex items-center gap-2"
+          >
+            <span className="flex">⭐⭐⭐⭐⭐</span>
+            Trusted by 150+ clients across Bangalore
+          </motion.p>
         </motion.div>
 
         {/* Right */}
@@ -59,26 +77,32 @@ const HeroSection = () => {
           <div className="relative">
             <div className="absolute -inset-4 rounded-3xl bg-primary/10 blur-2xl" />
             <img
-              src={heroImg}
-              alt="Luxury makeup products and brushes"
+              src={showcaseImg}
+              alt="Bridal Makeup Glamour"
               width={1024}
               height={1280}
-              className="relative rounded-3xl w-full max-w-md lg:max-w-lg object-cover shadow-2xl"
+              className="relative rounded-3xl w-full max-w-md lg:max-w-lg object-cover shadow-2xl h-[600px]"
             />
-            {/* Floating elements */}
+
+            {/* Floating Trust Badges */}
             <motion.div
               animate={{ y: [-8, 8, -8] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-4 -right-4 w-20 h-20 rounded-2xl bg-accent/80 backdrop-blur flex items-center justify-center text-3xl shadow-lg"
+              className="absolute -top-4 -right-4 px-4 py-2 rounded-xl bg-card/90 backdrop-blur-md border border-border flex items-center gap-2 shadow-xl"
             >
-              💄
+              <span className="text-primary text-xl">✨</span>
+              <span className="font-heading font-semibold text-sm">Makeup Artist</span>
             </motion.div>
+
+
+
             <motion.div
-              animate={{ y: [6, -6, 6] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-4 -left-4 w-16 h-16 rounded-2xl bg-secondary/80 backdrop-blur flex items-center justify-center text-2xl shadow-lg"
+              animate={{ y: [-5, 5, -5] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              className="absolute bottom-10 -right-6 px-4 py-2 rounded-xl bg-card/90 backdrop-blur-md border border-border flex items-center gap-2 shadow-xl"
             >
-              ✨
+              <span className="text-primary text-xl">💫</span>
+              <span className="font-heading font-semibold text-sm">Bridal Specialist</span>
             </motion.div>
           </div>
         </motion.div>

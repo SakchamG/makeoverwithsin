@@ -6,6 +6,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
+import HoverButton from "./ui/HoverButton";
 
 const packages = [
   { id: "basic", name: "Basic Glam", price: "₹2,999" },
@@ -30,6 +31,7 @@ const ContactSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [showBooking, setShowBooking] = useState(false);
+  const [showQuickContact, setShowQuickContact] = useState(false);
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -77,8 +79,8 @@ const ContactSection = () => {
 
         {/* Two booking options */}
         <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-          <motion.a
-            href="tel:+919113845518"
+          <motion.div
+            onClick={() => setShowQuickContact(true)}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -89,8 +91,8 @@ const ContactSection = () => {
             </div>
             <h3 className="font-heading text-xl font-semibold text-foreground">Call Us</h3>
             <p className="font-body text-sm text-muted-foreground">+91 9113845518</p>
-            <span className="btn-primary-luxury text-sm px-6 py-2.5">Call Now</span>
-          </motion.a>
+            <HoverButton as="span" className="text-sm px-6 py-2.5">Call Now</HoverButton>
+          </motion.div>
 
           <motion.button
             onClick={() => setShowBooking(true)}
@@ -104,7 +106,7 @@ const ContactSection = () => {
             </div>
             <h3 className="font-heading text-xl font-semibold text-foreground">WhatsApp</h3>
             <p className="font-body text-sm text-muted-foreground">Book with all details</p>
-            <span className="btn-primary-luxury text-sm px-6 py-2.5">Book via WhatsApp</span>
+            <HoverButton as="span" className="text-sm px-6 py-2.5">Book via WhatsApp</HoverButton>
           </motion.button>
         </div>
       </div>
@@ -119,6 +121,7 @@ const ContactSection = () => {
             <DialogDescription className="font-body text-muted-foreground">
               Fill in your details and we'll connect you on WhatsApp
             </DialogDescription>
+            <p className="font-body text-xs text-green-600/80 mt-1 font-medium">⚡ Usually replies within 10 minutes</p>
           </DialogHeader>
 
           <div className="space-y-4 mt-2">
@@ -268,18 +271,65 @@ const ContactSection = () => {
               />
             </div>
 
-            <button
-              type="button"
-              onClick={handleBook}
-              disabled={!isFormValid}
-              className={cn(
-                "btn-primary-luxury w-full text-base gap-2",
-                !isFormValid && "opacity-50 cursor-not-allowed"
-              )}
+            <div className="flex flex-col sm:flex-row gap-3 w-full">
+              <HoverButton
+                as="button"
+                onClick={handleBook}
+                disabled={!isFormValid}
+                className={cn(
+                  "w-full text-base gap-2 flex flex-1",
+                  !isFormValid && "opacity-50 cursor-not-allowed"
+                )}
+              >
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Book via WhatsApp
+              </HoverButton>
+
+              <HoverButton
+                as="a"
+                href="tel:+919113845518"
+                className="w-full text-base gap-2 flex flex-1 items-center justify-center"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Instant Call
+              </HoverButton>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Quick Contact Dialog */}
+      <Dialog open={showQuickContact} onOpenChange={setShowQuickContact}>
+        <DialogContent className="max-w-xs sm:max-w-sm rounded-2xl p-8">
+          <DialogHeader>
+            <DialogTitle className="font-heading text-2xl text-center text-foreground">
+              Contact Us
+            </DialogTitle>
+            <DialogDescription className="font-body text-center text-muted-foreground mt-2">
+              How would you like to connect right now?
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="flex flex-col gap-4 mt-6">
+            <HoverButton
+              as="a"
+              href="https://wa.me/919113845518?text=Hello%20Sindhu!%20I%20am%20interested%20in%20your%20makeup%20services%20and%20would%20like%20to%20know%20more%20details."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-base gap-2 flex items-center justify-center"
             >
-              <MessageCircle className="w-5 h-5" />
-              Book via WhatsApp
-            </button>
+              <MessageCircle className="w-5 h-5 mr-2" />
+              WhatsApp
+            </HoverButton>
+
+            <HoverButton
+              as="a"
+              href="tel:+919113845518"
+              className="w-full text-base gap-2 flex items-center justify-center"
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Call Now
+            </HoverButton>
           </div>
         </DialogContent>
       </Dialog>

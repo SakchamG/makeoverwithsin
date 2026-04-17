@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import aboutImg from "@/assets/about-artist.jpg";
+import aboutImg from "@/assets/about-artist.jpeg";
 
 const features = [
   { icon: "💎", title: "Premium Products", desc: "I use only trusted, high-quality makeup brands for safe and flawless results." },
@@ -52,13 +52,13 @@ const AboutSection = () => {
             className="space-y-6"
           >
             <p className="font-body text-muted-foreground leading-relaxed text-base md:text-lg">
-              I am a professional makeup artist dedicated to helping every client look confident, elegant, and beautiful. I specialize in creating customized makeup looks based on each person's style, skin tone, and occasion. With a passion for beauty and attention to detail, I work closely with every client to create a look that enhances their natural features and makes them feel their best.
+              My name is Sindhu, and I am a professional makeup artist passionate about helping every client feel confident, elegant, and beautiful. I specialize in creating customized makeup looks that suit each person’s style, skin tone, and occasion. With attention to detail and a love for beauty, I work closely with every client to enhance their natural features and make them feel their best.
             </p>
           </motion.div>
         </div>
 
         {/* Feature cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-16">
           {features.map((f, i) => (
             <motion.div
               key={f.title}

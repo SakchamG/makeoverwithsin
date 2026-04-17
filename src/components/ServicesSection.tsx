@@ -29,7 +29,7 @@ const ServicesSection = () => {
           <p className="section-subtitle">Every occasion deserves a look that's uniquely yours</p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
@@ -41,9 +41,11 @@ const ServicesSection = () => {
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{s.icon}</div>
               <h3 className="font-heading text-lg font-semibold text-foreground mb-2">{s.title}</h3>
               <p className="font-body text-sm text-muted-foreground mb-4">{s.desc}</p>
-              <span className="inline-block font-body text-sm text-primary font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                Learn More →
-              </span>
+              <div className="mt-auto pt-4 border-t border-border/50">
+                <span className="inline-block font-body text-xs md:text-sm text-primary font-medium transition-colors duration-300">
+                  Contact Artist for Consultation
+                </span>
+              </div>
             </motion.div>
           ))}
         </div>

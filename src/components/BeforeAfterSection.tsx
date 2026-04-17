@@ -1,27 +1,23 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import serviceBridal from "@/assets/service-bridal.jpg";
-import aboutArtist from "@/assets/about-artist.jpg";
-import heroMakeup from "@/assets/hero-makeup.jpg";
-
 const transformations = [
   {
-    title: "Bridal Transformation",
+    title: "Bridal Glam",
     desc: "A stunning bridal look that radiates elegance and grace on the most special day.",
-    before: aboutArtist,
-    after: serviceBridal,
+    before: "https://images.unsplash.com/photo-1595953047240-a15d7827dbd2?q=80&w=400", // Placeholder Before
+    after: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400",  // Placeholder After
   },
   {
-    title: "Party Makeup Transformation",
+    title: "Party Glam",
     desc: "From everyday beauty to glamorous party-ready in one session.",
-    before: heroMakeup,
-    after: serviceBridal,
+    before: "https://images.unsplash.com/photo-1550525287-ba1f97fd3b14?q=80&w=400", // Placeholder Before
+    after: "https://images.unsplash.com/photo-1512496015851-a1dc8a477d48?q=80&w=400",  // Placeholder After
   },
   {
-    title: "Natural Glam Transformation",
-    desc: "Enhancing natural beauty with subtle, glowing makeup that looks effortless.",
-    before: aboutArtist,
-    after: heroMakeup,
+    title: "HD Makeup",
+    desc: "High-definition flawless finish perfect for close-ups and camera-ready looks.",
+    before: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=400", // Placeholder Before
+    after: "https://images.unsplash.com/photo-1519415510236-718bdfcd89c5?q=80&w=400",  // Placeholder After
   },
 ];
 
@@ -69,7 +65,7 @@ const BeforeAfterSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="gallery" className="section-padding bg-gradient-section" ref={ref}>
+    <section id="before-after" className="section-padding bg-gradient-section" ref={ref}>
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
