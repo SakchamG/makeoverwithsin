@@ -29,7 +29,7 @@ const Footer = () => {
             <button onClick={comingSoon} className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center text-lg hover:bg-primary/50 transition-colors cursor-pointer" aria-label="Google Maps">
               <MapPin className="w-5 h-5" />
             </button>
-            <a href="mailto:hello@makeoverwithsin.com" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center text-lg hover:bg-primary/50 transition-colors cursor-pointer" aria-label="Email">
+            <a href="mailto:makeoverwithsim@gmail.com" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center text-lg hover:bg-primary/50 transition-colors cursor-pointer" aria-label="Email">
               <Mail className="w-5 h-5" />
             </a>
           </div>
@@ -71,7 +71,7 @@ const Footer = () => {
             <p className="flex items-center gap-2"><MessageCircle className="w-4 h-4" /> WhatsApp Available</p>
             <p className="flex items-center gap-2 cursor-pointer hover:text-primary transition-colors" onClick={comingSoon}><Instagram className="w-4 h-4" /> @makeoverwithsin</p>
             <p className="flex items-center gap-2 cursor-pointer hover:text-primary transition-colors" onClick={comingSoon}><MapPin className="w-4 h-4" /> Bangalore Studio</p>
-            <p className="flex items-center gap-2 break-all"><Mail className="w-4 h-4 shrink-0" /> hello@makeoverwithsin.com</p>
+            <p className="flex items-center gap-2 break-all"><Mail className="w-4 h-4 shrink-0" /> makeoverwithsim@gmail.com</p>
           </div>
         </div>
       </div>
