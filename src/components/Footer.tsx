@@ -76,11 +76,16 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center">
-        <p className="font-body text-sm opacity-90">
-          © {new Date().getFullYear()} Makeover with Sin. All rights reserved.
-        </p>
-        <div className="flex gap-4 font-body text-xs opacity-90">
+      <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+        <div className="flex flex-col gap-2">
+          <p className="font-body text-sm opacity-90">
+            © {new Date().getFullYear()} Makeover with Sin. All rights reserved.
+          </p>
+          <p className="font-body text-sm opacity-90">
+            A project by <a href="https://skmetaverse.space" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors font-semibold">SK Metaverse</a>
+          </p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-4 font-body text-xs opacity-90">
           <a href="#" onClick={comingSoon} className="hover:opacity-100 hover:text-primary transition-all">Privacy Policy</a>
           <a href="#" onClick={comingSoon} className="hover:opacity-100 hover:text-primary transition-all">Terms & Conditions</a>
           <a href="#" onClick={comingSoon} className="hover:opacity-100 hover:text-primary transition-all">Cancellation Policy</a>
