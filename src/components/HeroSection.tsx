@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 // import heroImg from "@/assets/hero-makeup.jpg";
-import showcaseImg from "@/assets/showcase.png";
+import showcaseImg from "@/assets/showcase.webp";
 import HoverButton from "./ui/HoverButton";
 
 const HeroSection = () => {

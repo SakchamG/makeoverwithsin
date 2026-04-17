@@ -51,6 +51,7 @@ const GallerySection = () => {
               onClick={() => setSelectedImage(src)}
             >
               <img 
+                loading="lazy"
                 src={src} 
                 alt={`Makeup Transformation ${idx + 1}`} 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
