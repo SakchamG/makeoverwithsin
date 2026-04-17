@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://makeoverwithsin.com/sitemap.xml
+Sitemap: https://makeoverwithsin.vercel.app/sitemap.xml
